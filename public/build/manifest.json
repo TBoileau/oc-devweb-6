@@ -1,0 +1,16 @@
+{
+  "build/app.css": "http://localhost:8080/build/app.css",
+  "build/app.js": "http://localhost:8080/build/app.js",
+  "build/runtime.js": "http://localhost:8080/build/runtime.js",
+  "build/vendors-node_modules_webpack-dev-server_client_index_js_protocol_ws_3A_hostname_localhost_por-f86214.js": "http://localhost:8080/build/vendors-node_modules_webpack-dev-server_client_index_js_protocol_ws_3A_hostname_localhost_por-f86214.js",
+  "build/images/favicon.ico": "http://localhost:8080/build/images/favicon.ico",
+  "build/images/android-chrome-384x384.png": "http://localhost:8080/build/images/android-chrome-384x384.png",
+  "build/images/android-chrome-192x192.png": "http://localhost:8080/build/images/android-chrome-192x192.png",
+  "build/images/apple-touch-icon.png": "http://localhost:8080/build/images/apple-touch-icon.png",
+  "build/images/mstile-150x150.png": "http://localhost:8080/build/images/mstile-150x150.png",
+  "build/images/safari-pinned-tab.svg": "http://localhost:8080/build/images/safari-pinned-tab.svg",
+  "build/images/favicon-32x32.png": "http://localhost:8080/build/images/favicon-32x32.png",
+  "build/images/favicon-16x16.png": "http://localhost:8080/build/images/favicon-16x16.png",
+  "build/images/site.webmanifest": "http://localhost:8080/build/images/site.webmanifest",
+  "build/images/browserconfig.xml": "http://localhost:8080/build/images/browserconfig.xml"
+}
