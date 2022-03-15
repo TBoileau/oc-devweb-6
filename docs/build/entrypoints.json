@@ -1,0 +1,22 @@
+{
+  "entrypoints": {
+    "index": {
+      "js": [
+        "/build/runtime.0b5381d9.js",
+        "/build/index.b9fdcb35.js"
+      ],
+      "css": [
+        "/build/index.fe80395c.css"
+      ]
+    },
+    "photographer": {
+      "js": [
+        "/build/runtime.0b5381d9.js",
+        "/build/photographer.7632ade1.js"
+      ],
+      "css": [
+        "/build/photographer.fe80395c.css"
+      ]
+    }
+  }
+}
