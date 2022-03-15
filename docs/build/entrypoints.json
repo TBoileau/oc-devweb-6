@@ -2,20 +2,20 @@
   "entrypoints": {
     "index": {
       "js": [
-        "/build/runtime.0b5381d9.js",
-        "/build/index.b9fdcb35.js"
+        "/build/runtime.js",
+        "/build/index.js"
       ],
       "css": [
-        "/build/index.fe80395c.css"
+        "/build/index.css"
       ]
     },
     "photographer": {
       "js": [
-        "/build/runtime.0b5381d9.js",
-        "/build/photographer.7632ade1.js"
+        "/build/runtime.js",
+        "/build/photographer.js"
       ],
       "css": [
-        "/build/photographer.fe80395c.css"
+        "/build/photographer.css"
       ]
     }
   }

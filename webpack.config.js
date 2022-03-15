@@ -15,8 +15,6 @@ Encore
   .enableSingleRuntimeChunk()
   .cleanupOutputBeforeBuild()
   .enableBuildNotifications()
-  .enableSourceMaps(!Encore.isProduction())
-  .enableVersioning(Encore.isProduction())
   .configureBabel((config) => {
     config.plugins.push('@babel/plugin-proposal-class-properties');
   })
@@ -38,6 +36,7 @@ Encore
 
 if (Encore.isProduction()) {
   Encore
+    .setOutputPath('docs/build/')
     .enablePostCssLoader()
     .addPlugin(new PurgeCssPlugin({
       paths: glob.sync([
