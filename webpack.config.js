@@ -1,7 +1,4 @@
 const Encore = require('@symfony/webpack-encore');
-const PurgeCssPlugin = require('purgecss-webpack-plugin');
-const glob = require('glob-all');
-const path = require('path');
 
 if (!Encore.isRuntimeEnvironmentConfigured()) {
   Encore.configureRuntimeEnvironment(process.env.NODE_ENV || 'dev');
@@ -15,6 +12,7 @@ Encore
   .enableSingleRuntimeChunk()
   .cleanupOutputBeforeBuild()
   .enableBuildNotifications()
+  .enableSourceMaps(!Encore.isProduction())
   .configureBabel((config) => {
     config.plugins.push('@babel/plugin-proposal-class-properties');
   })
@@ -35,17 +33,7 @@ Encore
   .enableSassLoader();
 
 if (Encore.isProduction()) {
-  Encore
-    .setOutputPath('docs/build/')
-    .enablePostCssLoader()
-    .addPlugin(new PurgeCssPlugin({
-      paths: glob.sync([
-        path.join(__dirname, 'src/**/*.html'),
-      ]),
-      defaultExtractor: (content) => {
-        return content.match(/[\w-/:]+(?<!:)/g) || [];
-      }
-    }));
+  Encore.setOutputPath('docs/build/');
 }
 
 module.exports = Encore.getWebpackConfig();
