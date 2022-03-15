@@ -34,5 +34,8 @@
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
     "webpack-notifier": "^1.6.0"
+  },
+  "dependencies": {
+    "reset-css": "^5.0.1"
   }
 }
