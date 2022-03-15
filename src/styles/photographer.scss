@@ -1,0 +1,255 @@
+@import 'shared';
+
+main {
+  > .photographer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4.375rem 3.125rem;
+    background: $light;
+    border-radius: .315rem;
+
+    > div {
+      width: percentage(1/3);
+      display: flex;
+    }
+
+    > div:nth-child(1) {
+      flex-direction: column;
+      gap: 1.125rem;
+
+      > .name {
+        color: $orange;
+        font-size: 4rem;
+      }
+
+      > .city {
+        color: $red;
+        font-size: 1.5rem;
+      }
+
+      > .tagline {
+        color: $dark;
+        font-size: 1.125rem;
+      }
+    }
+
+    > div:nth-child(2) {
+      justify-content: center;
+
+      > .contact {
+        background: $red;
+        border-radius: .315rem;
+        font-size: 1.25rem;
+        color: $white;
+        padding: 1.5rem .75rem;
+        border: none;
+      }
+    }
+
+    > div:nth-child(3) {
+      justify-content: flex-end;
+
+      > .portrait {
+        width: 16rem;
+        border-radius: 50%;
+        aspect-ratio: 1;
+        object-fit: cover;
+      }
+    }
+  }
+
+  > .medias {
+    margin-top: 4rem;
+
+    > .sorting {
+      > span {
+        font-size: 1.125rem;
+        font-weight: 700;
+        margin-right: 1rem;
+      }
+
+      > .dropdown {
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 137px;
+        background: $red;
+        border-radius: .315rem;
+        font-size: 1.125rem;
+        color: $white;
+        padding: 1rem .75rem;
+        border: none;
+        position: relative;
+
+        > .dropdown-toggle {
+          position: fixed;
+          top: 0;
+          left: 0;
+          opacity: 0;
+        }
+
+        > .icon {
+          width: 1rem;
+          margin-left: .5rem;
+          fill: $white;
+        }
+
+        > .dropdown-menu {
+          z-index: 10;
+          background: $red;
+          color: $white;
+          margin: -5px 0 0 0;
+          padding: 5px .75rem 0 .75rem;
+          list-style: none;
+          width: 100%;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          display: flex;
+          flex-direction: column;
+          border-radius: 0 0 .315rem .315rem;
+
+          > .dropdown-item {
+            border-top: 1px solid $white;
+            padding-top: 1rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+
+            &.active {
+              display: none;
+            }
+          }
+        }
+
+        > .dropdown-toggle:not(:checked) {
+          ~ .chevron-down {
+            display: inline-block;
+          }
+          ~ .chevron-up {
+            display: none;
+          }
+          ~ .dropdown-menu {
+            display: none;
+          }
+        }
+
+        > .dropdown-toggle:checked {
+          ~ .chevron-down {
+            display: none;
+          }
+          ~ .chevron-up {
+            display: inline-block;
+          }
+        }
+      }
+    }
+
+    > .media-list {
+      margin-top: 4rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 2rem;
+      grid-row-gap: 5rem;
+    }
+  }
+}
+
+
+.media {
+  > .image, > .video {
+    width: 100%;
+    aspect-ratio: 350/300;
+    object-fit: cover;
+    border-radius: .315rem;
+    cursor: pointer;
+  }
+
+  > .media-caption {
+    margin-top: .75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    > .title {
+      font-size: 1.5rem;
+      color: $red;
+    }
+
+    > .likes {
+      font-size: 1.5rem;
+      color: $red;
+      flex-shrink: 0;
+
+      &:after {
+        display: inline-block;
+        width: 1.3rem;
+        height: 1.3rem;
+        content: "";
+        background-color: $red;
+        -webkit-mask-image: url(../images/heart.svg);
+        mask-image: url(../images/heart.svg);
+        margin-left: .5rem;
+      }
+    }
+  }
+}
+
+.lightbox {
+  display: none;
+
+  &-open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 20;
+    background: rgba(0, 0, 0, .6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  > .lightbox-wrapper {
+    z-index: 21;
+    position: relative;
+    width: 80vh;
+    background: $white;
+    padding: 2rem 6.5rem;
+
+    > .lightbox-controls {
+      position: absolute;
+      height: 2.5rem;
+      width: 2.5rem;
+      top: calc(50% - 1.25rem);
+
+      > svg {
+        fill: $red;
+        height: 2.5rem;
+        width: 2.5rem;
+      }
+
+      &.lightbox-left {
+        left: 2.5rem;
+      }
+
+      &.lightbox-right {
+        right: 2.5rem;
+      }
+    }
+
+    > .lightbox-close {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      > svg {
+        fill: $red;
+        height: 2.5rem;
+        width: 2.5rem;
+      }
+    }
+  }
+
+}

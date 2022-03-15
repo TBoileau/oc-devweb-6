@@ -10,8 +10,8 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 Encore
   .setOutputPath('public/build/')
   .setPublicPath('/build')
-  .addEntry('app', './assets/app.js')
-  .splitEntryChunks()
+  .addEntry('index', './src/index.js')
+  .addEntry('photographer', './src/photographer.js')
   .enableSingleRuntimeChunk()
   .cleanupOutputBeforeBuild()
   .enableBuildNotifications()
@@ -24,10 +24,16 @@ Encore
     config.useBuiltIns = 'usage';
     config.corejs = 3;
   })
-  .copyFiles({
-    from: './assets/images',
-    to: 'images/[path][name].[ext]'
-  })
+  .copyFiles([
+    {
+      from: './src/images',
+      to: 'images/[path][name].[ext]'
+    },
+    {
+      from: './src/data',
+      to: 'data/[path][name].[ext]'
+    }
+  ])
   .enableSassLoader();
 
 if (Encore.isProduction()) {
