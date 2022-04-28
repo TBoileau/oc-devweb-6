@@ -1,7 +1,7 @@
 {
-  "name": "oc-devweb-6",
+  "name": "oc-frontend-6",
   "version": "1.0.0",
-  "description": "OpenClassrooms - Développeur Web - Projet 6",
+  "description": "OpenClassrooms - Développeur Frontend - Projet 6",
   "scripts": {
     "dev-server": "encore dev-server",
     "dev": "encore dev",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/TBoileau/oc-devweb-6.git"
+    "url": "git+ssh://git@github.com/TBoileau/oc-frontend-6.git"
   },
   "keywords": [
     "openclassrooms"
@@ -18,7 +18,7 @@
   "author": "Thomas Boileau <t-boileau@email.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TBoileau/oc-devweb-6/issues"
+    "url": "https://github.com/TBoileau/oc-frontend-6/issues"
   },
   "devDependencies": {
     "@symfony/webpack-encore": "^1.7.0",
